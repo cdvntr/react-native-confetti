@@ -1,0 +1,24 @@
+{
+  "name": "generator-rn-cv",
+  "version": "0.0.1",
+  "description": "Scaffolding in use at codeventure for React Native Projects",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "app",
+    "component",
+    "service"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "Codeventure",
+  "license": "MIT",
+  "repository": "https://github.com/cdvntr/generator-rn-cv.git",
+  "dependencies": {
+    "change-case": "^3.0.0",
+    "fs-extra": "^0.30.0",
+    "yeoman-generator": "^0.24.1"
+  }
+}

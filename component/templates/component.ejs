@@ -1,0 +1,37 @@
+"use strict";
+
+import React, {Component, PropTypes} from "react";
+import {StyleSheet, View} from "react-native";
+import {} from "<%= compsRelPath %>"
+
+
+class <%= componentName %> extends Component {
+
+    constructor(props, context, ...args) {
+        super(props, context, ...args);
+
+    }
+
+    componentWillMount() {
+
+    }
+
+    componentWillUnmount() {
+
+    }
+
+    render() {
+        let {} = this.state;
+        let {...otherProps} = this.props;
+
+        return <View style={styles.<%= compNameCamelCase %>}></View>;
+    }
+}
+
+let styles = StyleSheet.create({
+    <%= compNameCamelCase %>: {
+
+    }
+});
+
+export default <%= componentName %>;
