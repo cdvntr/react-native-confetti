@@ -17,7 +17,10 @@ module.exports = generators.Base.extend({
             let dirPath = './services';
             fs.ensureDirSync(dirPath);
             let filePath = path.format({dir: dirPath, base: changeCase.camelCase(answer.name) + '.js'});
-            this.fs.copyTpl(this.templatePath('service.ejs'), filePath, {serviceName: answer.name});
+            this.fs.copyTpl(this.templatePath('service.ejs'), filePath, {
+              serviceName: answer.name,
+              methodName: changeCase.camelCase(answer.name) + 'Method'
+            });
     		});
     },
 

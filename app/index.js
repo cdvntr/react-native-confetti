@@ -15,7 +15,6 @@ module.exports = generators.Base.extend({
 	writing() {
 		try {
 			['components/_defaultComponents', 'assets/images', 'services'].forEach(d => fs.ensureDirSync(this.destinationPath(d)));
-			['services/services.js'].forEach(f => fs.ensureFileSync(this.destinationPath(f)));
 			['components/_defaultComponents/_components.js'].forEach(f => fs.ensureFileSync(this.destinationPath(f)));
 			this.fs.copy(this.templatePath('_package.json'),this.destinationPath('package.json'));
 		} catch(e) {
