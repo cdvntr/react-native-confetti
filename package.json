@@ -8,8 +8,7 @@
   "files": [
     "app",
     "component",
-    "service",
-    "package"
+    "service"
   ],
   "keywords": [
     "yeoman-generator"
