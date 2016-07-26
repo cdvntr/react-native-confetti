@@ -34,7 +34,7 @@ module.exports = generators.Base.extend({
 
 	_currentDirectoryHasRNApp() {
 		try {
-			//['android', 'ios', 'index.ios.js', 'index.android.js'].forEach(f => fs.statSync(this.destinationPath(f)));
+			['android', 'ios', 'index.ios.js', 'index.android.js'].forEach(f => fs.statSync(this.destinationPath(f)));
 			return true;
 		} catch (e) {
 			return false;
