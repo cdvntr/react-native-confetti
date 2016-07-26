@@ -1,4 +1,4 @@
-# generator-rn-cv
+# generator-rn-cv [![npm version](https://badge.fury.io/js/generator-rn-cv.svg)](http://badge.fury.io/js/generator-rn-cv)
 > An opinionated React Native generator
 
 
