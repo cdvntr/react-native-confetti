@@ -46,30 +46,37 @@ module.exports = generators.Base.extend({
 		}
 		]).then(answers => {
 			let dirPath;
-			if (answers.isMain == 'Main Component') {
+			let isMain = answers.isMain == 'Main Component';
+			let isShared = answers.type == 'Shared Component';
+			if (isMain) {
 				dirPath = path.join(answers.path, answers.name);
 			} else {
 				dirPath = answers.path;
 			}
-			fs.ensureDirSync(dirPath);
+			//fs.ensureDirSync(dirPath);
 			let filePath = path.format({ dir: dirPath, base: answers.name + '.js'});
 			let compsFilePath = path.format({ dir: dirPath, base: '_components.js'});
+			// Create the component file with shared and other components relative path
 			this.fs.copyTpl(this.templatePath('component.ejs'), filePath, {
 				componentName: answers.name,
 				compNameCamelCase: changeCase.camelCase(answers.name),
 				defCompsRelPath: path.relative(dirPath, this.destinationPath('./components/_defaultComponents/_components.js')).split(path.sep).join('/'),
-				compsRelPath: './_components.js'
+				compsRelPath: './_components.js',
+				defComponents: !isShared
 			});
-			if (answers.isMain == 'Main Component')
+			// Update the list of components for the directory we have created
+			this.fs.copyTpl(this.templatePath('_components.ejs'), path.format({ dir: answers.path, base: '_components.js'}), {
+				components: this._walkComponentsSync(answers.path).concat([{
+					name: answers.name,
+					relPath: './' + (isMain ? answers.name + '/' + answers.name : answers.name)
+				}])
+			});
+			// Create an empty _components.js file for the new main component
+			if(isMain) {
 				this.fs.copyTpl(this.templatePath('_components.ejs'), compsFilePath, {
-					components: this._walkComponentsSync(dirPath).concat([{name: answers.name, relPath: answers.isMain == './' + ('Main Component' ? answers.name + '/' + answers.name : answers.name}]))
+					components: []
 				});
-			else
-				this.fs.copyTpl(this.templatePath('_components.ejs'), this.destinationPath('./components/_defaultComponents/_components.js'), {
-					components: this._walkComponentsSync(this.destinationPath('./components/_defaultComponents')).concat([{name: answers.name, relPath: './' + (answers.isMain == 'Main Component' ? answers.name + '/' + answers.name : answers.name}]))
-				});
-
-$$$$$$$$$$$$$$$$$$$$$$$$$$$
+			}
 		});
 	},
 
