@@ -16,6 +16,10 @@ class <%= componentName %> extends Component {
 
     }
 
+    componentDidMount() {
+
+    }
+
     componentWillUnmount() {
 
     }
@@ -24,7 +28,8 @@ class <%= componentName %> extends Component {
         let {} = this.state;
         let {...otherProps} = this.props;
 
-        return <View style={styles.<%= compNameCamelCase %>}></View>;
+        return <View style={styles.<%= compNameCamelCase %>}>
+        </View>;
     }
 }
 

@@ -16,6 +16,7 @@ module.exports = generators.Base.extend({
 		try {
 			['components/_defaultComponents', 'assets/images', 'services'].forEach(d => fs.ensureDirSync(this.destinationPath(d)));
 			['components/_components.js'].forEach(f => fs.ensureFileSync(this.destinationPath(f)));
+			['services/services.js'].forEach(f => fs.ensureFileSync(this.destinationPath(f)));
 		} catch(e) {
 			this.env.error('Something went wrong while creating the files');
 		}
@@ -36,7 +37,7 @@ module.exports = generators.Base.extend({
 
 	_currentDirectoryHasScaffolded() {
 		try {
-			['components', 'assets', 'yo-rc.json'].forEach(f => fs.statSync(this.destinationPath(f)));
+			['components', 'service', 'assets', 'yo-rc.json'].forEach(f => fs.statSync(this.destinationPath(f)));
 			return true;
 		} catch (e) {
 			return false;
