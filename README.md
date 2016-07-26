@@ -36,6 +36,14 @@ yo rn-cv:component
 4. What will be the name of your component?
   - Input the name of the component. This will turn the format you used to PascalCase. (e.g: 'home view' -> 'HomeView')
 
+### Create a service
+
+```bash
+yo rn-cv:service
+```
+
+1. What will be the name of your service?
+  - Input the name of the service. This will turn the format you used to camelCase. (e.g: 'user service' -> 'userService')
 
 ## License
 
