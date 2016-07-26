@@ -17,13 +17,20 @@ module.exports = generators.Base.extend({
 			['components/_defaultComponents', 'assets/images', 'services'].forEach(d => fs.ensureDirSync(this.destinationPath(d)));
 			['services/services.js'].forEach(f => fs.ensureFileSync(this.destinationPath(f)));
 			['components/_defaultComponents/_components.js'].forEach(f => fs.ensureFileSync(this.destinationPath(f)));
+			this.fs.copy(this.templatePath('_package.json'),this.destinationPath('package.json'));
 		} catch(e) {
-			this.env.error('Something went wrong while creating the files');
+			this.env.error('Something went wrong while creating the files', e);
 		}
 	},
 
 	end() {
-		this.log('Scaffolded the app successfully');
+		 this.installDependencies({
+	  	 	bower: false,
+	 	 		npm: true,
+	   		callback: () => {
+	      	this.log('Scaffolded the app successfully');
+	   		}
+ 			});
 	},
 
 	_currentDirectoryHasRNApp() {
