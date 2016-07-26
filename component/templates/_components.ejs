@@ -1,0 +1,15 @@
+"use strict";
+
+<% components.forEach(function(component) { %>
+import <%= component.name %> from "<%= component.relPath %>";
+<% }); %>
+
+let exportsObject = {
+<% components.forEach(function(component) { %>
+    <%= component.name %>,
+<% }); %>
+};
+
+module.exports = exportsObject;
+
+export default exportsObject;

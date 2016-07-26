@@ -15,7 +15,7 @@ module.exports = generators.Base.extend({
 	writing() {
 		try {
 			['components/_defaultComponents', 'assets/images', 'services'].forEach(d => fs.ensureDirSync(this.destinationPath(d)));
-			['components/_components.js'].forEach(f => fs.ensureFileSync(this.destinationPath(f)));
+			['components/_defaultComponents/_components.js'].forEach(f => fs.ensureFileSync(this.destinationPath(f)));
 		} catch(e) {
 			this.env.error('Something went wrong while creating the files');
 		}
