@@ -13,13 +13,13 @@ npm install -g generator-rn-cv
 
 ## Usage
 
-# Create a new project
+### Create a new project
 
 ```bash
 yo rn-cv
 ```
 
-# Create a component
+### Create a component
 
 ```bash
 yo rn-cv:component
