@@ -2,8 +2,9 @@
 
 import React, {Component, PropTypes} from "react";
 import {StyleSheet, View} from "react-native";
+
+<% if(defComponents) { %>import {} from "<%= defCompsRelPath %>"<% } %>
 import {} from "<%= compsRelPath %>"
-import {} from "<%= defCompsRelPath %>"
 
 
 class <%= componentName %> extends Component {
