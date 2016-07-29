@@ -1,5 +1,5 @@
 # react-native-confetti
-Raining confettis made with react native animations
+Raining confetti made with react native animations
 
 <p align="left">
   <img src="./demo.gif" width="320" height="282">
