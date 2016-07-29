@@ -49,5 +49,5 @@ const styles = StyleSheet.create({
 Property         | Type     | Default  | Description
 ---              | ---      | ---      | ---
 `confettiCount`  | `Number` |  100     | Number of confetti
-`timeout`        | `Number` |  30 ms     | Timeout between confettis
-`duration`       | `Number` |  6000 ms | Duration until a conffetti reaches the bottom
+`timeout`        | `Number` |  30 (ms)     | Timeout between confettis
+`duration`       | `Number` |  6000 (ms) | Duration until a conffetti reaches the bottom
