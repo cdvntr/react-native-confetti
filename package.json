@@ -1,12 +1,8 @@
 {
-<<<<<<< HEAD
   "name": "react-native-confetti",
   "version": "0.0.1",
   "description": "Raining confettis made with react native animations",
   "main": "confettiView.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cdvntr/react-native-confetti.git"
@@ -22,27 +18,4 @@
     "url": "https://github.com/cdvntr/react-native-confetti/issues"
   },
   "homepage": "https://github.com/cdvntr/react-native-confetti#readme"
-=======
-  "name": "generator-rn-cv",
-  "version": "0.0.1",
-  "description": "Scaffolding in use at codeventure for React Native Projects",
-  "files": [
-    "app",
-    "component",
-    "service"
-  ],
-  "keywords": [
-    "yeoman-generator",
-    "scaffolding",
-    "react-native"
-  ],
-  "author": "Codeventure",
-  "license": "MIT",
-  "repository": "https://github.com/cdvntr/generator-rn-cv.git",
-  "dependencies": {
-    "change-case": "^3.0.0",
-    "fs-extra": "^0.30.0",
-    "yeoman-generator": "^0.24.1"
-  }
->>>>>>> 5e68d18f04662a82d30d147928f987d7d24082bf
 }
