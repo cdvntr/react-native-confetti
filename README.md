@@ -10,7 +10,7 @@
 npm i -S react-native-confetti
 ```
 
-## Use
+## Usage
 
 ```javascript
 import React, {Component} from 'react';
