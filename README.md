@@ -1,6 +1,6 @@
 # react-native-confetti
 
-<p align="center">
+<p align="left">
   <img src="./demo.gif" width="320" height="282">
 </p>
 
@@ -10,7 +10,7 @@
 npm i -S react-native-confetti
 ```
 
-## Use
+## Usage
 
 ```javascript
 import React, {Component} from 'react';
@@ -22,7 +22,7 @@ import {
 
 import Confetti from 'react-native-confetti';
 
-class Example extends Component {
+class RNConfetti extends Component {
   componentDidMount() {
     if(this._confettiView) {
        this._confettiView.startConfetti();
