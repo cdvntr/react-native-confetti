@@ -1,6 +1,6 @@
 # react-native-confetti
 
-<p align="center">
+<p align="left">
   <img src="./demo.gif" width="320" height="282">
 </p>
 
@@ -22,7 +22,7 @@ import {
 
 import Confetti from 'react-native-confetti';
 
-class Example extends Component {
+class RNConfetti extends Component {
   componentDidMount() {
     if(this._confettiView) {
        this._confettiView.startConfetti();
