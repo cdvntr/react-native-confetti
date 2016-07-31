@@ -1,4 +1,5 @@
 # react-native-confetti
+Raining confetti made with react native animations
 
 <p align="left">
   <img src="./demo.gif" width="320" height="282">
@@ -48,5 +49,5 @@ const styles = StyleSheet.create({
 Property         | Type     | Default  | Description
 ---              | ---      | ---      | ---
 `confettiCount`  | `Number` |  100     | Number of confetti
-`timeout`        | `Number` |  30      | Timeout between confettis
-`duration`       | `Number` |  6000 ms | Duration until a conffetti reaches the bottom
+`timeout`        | `Number` |  30 (ms)     | Timeout between confetti
+`duration`       | `Number` |  6000 (ms) | Duration until a conffetti reaches the bottom
