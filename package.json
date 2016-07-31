@@ -1,6 +1,6 @@
 {
   "name": "react-native-confetti",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Raining confettis made with react native animations",
   "main": "confettiView.js",
   "repository": {
@@ -17,5 +17,6 @@
   "bugs": {
     "url": "https://github.com/cdvntr/react-native-confetti/issues"
   },
-  "homepage": "https://github.com/cdvntr/react-native-confetti#readme"
+  "homepage": "https://github.com/cdvntr/react-native-confetti#readme",
+  "readmeFilename": "README.md" 
 }
