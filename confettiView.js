@@ -19,13 +19,17 @@ class ConfettiView extends Component {
        let {confettis} = this.state;
        let {confettiCount, timeout} = this.props;
        if(this.confettiIndex < confettiCount) {
-         setTimeout(() => {
+         this.t = setTimeout(() => {
            confettis.push({key: this.confettiIndex});
            this.confettiIndex++;
            this.setState({confettis});
            this.startConfetti();
          }, timeout);
        }
+  }
+
+  stopConfetti() {
+    clearTimeout(this.t)
   }
 
   removeConfetti(key) {
