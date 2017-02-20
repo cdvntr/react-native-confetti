@@ -13,17 +13,23 @@ class ConfettiView extends Component {
       super(props);
       this.state = {confettis: []};
       this.confettiIndex = 0;
+      this.stopConfetti = false;
   }
 
   startConfetti() {
        let {confettis} = this.state;
        let {confettiCount, timeout} = this.props;
+       this.stopConfetti = false;
        if(this.confettiIndex < confettiCount) {
          setTimeout(() => {
-           confettis.push({key: this.confettiIndex});
-           this.confettiIndex++;
-           this.setState({confettis});
-           this.startConfetti();
+           if (this.stopConfetti) {
+             return;
+           } else {
+             confettis.push({key: this.confettiIndex});
+             this.confettiIndex++;
+             this.setState({confettis});
+             this.startConfetti();
+           }
          }, timeout);
        }
   }
@@ -38,7 +44,12 @@ class ConfettiView extends Component {
          this.confettiIndex = 0;
        }
   }
-
+  
+  stopConfetti () 
+  {
+    this.stopConfetti = true;
+  }
+  
   render() {
        let {confettis} = this.state;
        let {...otherProps} = this.props
