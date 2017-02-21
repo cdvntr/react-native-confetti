@@ -91,7 +91,14 @@ class Confetti extends Component {
 }
 
 Confetti.defaultProps = {
-    duration: 6000
+    duration: 6000,
+    colors: [
+      "rgb(242.2, 102, 68.8)",
+      "rgb(255, 198.9, 91.8)",
+      "rgb(122.4, 198.9, 163.2)",
+      "rgb(76.5, 193.8, 216.7)",
+      "rgb(147.9, 99.4, 140.2)"
+    ]
 }
 
 const styles = StyleSheet.create({
