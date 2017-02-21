@@ -11,11 +11,19 @@ import {
 let windowHeight = Dimensions.get('window').height;
 let windowWidth = Dimensions.get('window').width;
 
+const defaultColors = [
+  "rgb(242.2, 102, 68.8)",
+  "rgb(255, 198.9, 91.8)",
+  "rgb(122.4, 198.9, 163.2)",
+  "rgb(76.5, 193.8, 216.7)",
+  "rgb(147.9, 99.4, 140.2)"
+];
+
 class Confetti extends Component {
   constructor(props) {
       super(props);
       this._yAnimation = new Animated.Value(0);
-      this.color = this.randomColor(this.props.colors);
+      this.color = this.randomColor(this.props.colors || defaultColors);
       this.left = this.randomValue(0, windowWidth);
   }
 
