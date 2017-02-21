@@ -15,7 +15,7 @@ class Confetti extends Component {
   constructor(props) {
       super(props);
       this._yAnimation = new Animated.Value(0);
-      this.color = this.randomColor();
+      this.color = this.randomColor(this.props.colors);
       this.left = this.randomValue(0, windowWidth);
   }
 
@@ -80,15 +80,8 @@ class Confetti extends Component {
       return Math.floor(Math.random() * (max - min) + min);
   }
 
-  randomColor() {
-      let colors = [
-        "rgb(242.2, 102, 68.8)",
-        "rgb(255, 198.9, 91.8)",
-        "rgb(122.4, 198.9, 163.2)",
-        "rgb(76.5, 193.8, 216.7)",
-        "rgb(147.9, 99.4, 140.2)"
-      ];
-      return colors[this.randomIntValue(0,5)];
+  randomColor(colors) {
+      return colors[this.randomIntValue(0,colors.length)];
   }
 
   render() {
@@ -98,7 +91,14 @@ class Confetti extends Component {
 }
 
 Confetti.defaultProps = {
-    duration: 6000
+    duration: 6000,
+    colors: [
+      "rgb(242.2, 102, 68.8)",
+      "rgb(255, 198.9, 91.8)",
+      "rgb(122.4, 198.9, 163.2)",
+      "rgb(76.5, 193.8, 216.7)",
+      "rgb(147.9, 99.4, 140.2)"
+    ]
 }
 
 const styles = StyleSheet.create({
