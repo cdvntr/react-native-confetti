@@ -8,6 +8,14 @@ import {
 
 import Confetti from "./confetti.js";
 
+const defaultColors = [
+  "rgb(242.2, 102, 68.8)",
+  "rgb(255, 198.9, 91.8)",
+  "rgb(122.4, 198.9, 163.2)",
+  "rgb(76.5, 193.8, 216.7)",
+  "rgb(147.9, 99.4, 140.2)"
+];
+
 class ConfettiView extends Component {
   constructor(props) {
       super(props);
@@ -42,9 +50,10 @@ class ConfettiView extends Component {
   render() {
        let {confettis} = this.state;
        let {...otherProps} = this.props
+       let colors = this.props.colors || defaultColors;
        return <View style={styles.container}>
          {confettis.map(confetti => {
-             return <Confetti key={confetti.key} index={confetti.key} onComplete={this.removeConfetti.bind(this, confetti.key)} colors={this.props.colors} {...otherProps}/>
+             return <Confetti key={confetti.key} index={confetti.key} onComplete={this.removeConfetti.bind(this, confetti.key)} colors={colors} {...otherProps}/>
          })}
        </View>
   }
