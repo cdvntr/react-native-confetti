@@ -30,6 +30,14 @@ class RNConfetti extends Component {
     }
   }
   
+  componentWillUnmount ()
+  {
+      if (this._confettiView)
+      {
+          this._confettiView.stopConfetti();
+      }
+  }
+  
   render() { 
     return <View style={styles.container}>
       <Confetti ref={(node) => this._confettiView = node}/>
@@ -51,3 +59,5 @@ Property         | Type     | Default  | Description
 `confettiCount`  | `Number` |  100     | Number of confetti
 `timeout`        | `Number` |  30 (ms)     | Timeout between confetti
 `duration`       | `Number` |  6000 (ms) | Duration until a conffetti reaches the bottom
+`colors`       | `Array` |  ["rgb(242.2, 102, 68.8)","rgb(255, 198.9, 91.8)","rgb(122.4, 198.9, 163.2)","rgb(76.5, 193.8, 216.7)","rgb(147.9, 99.4, 140.2)"] | Array of color strings to choose from for the confetti
+
