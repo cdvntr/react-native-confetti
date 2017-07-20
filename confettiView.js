@@ -18,6 +18,12 @@ class ConfettiView extends Component {
 		this.state = { confettis: [], width: windowWidth, height: windowHeight };
 		this.confettiIndex = 0;
 		this.shouldStop = false;
+		this.unmounted = false;
+	}
+
+	componentWillUnmount() {
+		this.stopConfetti();
+		this.unmounted = true;
 	}
 
 	startConfetti() {
@@ -39,6 +45,7 @@ class ConfettiView extends Component {
 	}
 
 	removeConfetti(key) {
+		if (this.unmounted === true) return;
 		let { confettis } = this.state;
 		let { confettiCount } = this.props;
 		let index = confettis.findIndex(confetti => {
