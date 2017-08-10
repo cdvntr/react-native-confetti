@@ -53,7 +53,7 @@ class Confetti extends Component {
   }
 
   getConfettiStyle() {
-      let {index, size} = this.props;
+      let {index, size, bsize} = this.props;
       let bigConfetti = {
         height: 5.5*size,
         width: 11*size,
