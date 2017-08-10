@@ -55,20 +55,20 @@ class Confetti extends Component {
   getConfettiStyle() {
       let {index} = this.props;
       let bigConfetti = {
-        height: 5.5,
-        width: 11,
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5,
-        borderTopLeftRadius: 2.6,
-        borderTopRightRadius: 2.6
+        height: 5.5*3,
+        width: 11*3,
+        borderBottomLeftRadius: 5*3,
+        borderBottomRightRadius: 5*3,
+        borderTopLeftRadius: 2.6*3,
+        borderTopRightRadius: 2.6*3
       };
       let smallConfetti = {
-        height: 4.5,
-        width: 8,
-        borderBottomLeftRadius: 2.5,
-        borderBottomRightRadius: 2.5,
-        borderTopLeftRadius: 1.3,
-        borderTopRightRadius: 1.3
+        height: 4.5*3,
+        width: 8*3,
+        borderBottomLeftRadius: 2.5*3,
+        borderBottomRightRadius: 2.5*3,
+        borderTopLeftRadius: 1.3*3,
+        borderTopRightRadius: 1.3*3
       }
       return index % 5 === 0 ? smallConfetti : bigConfetti;
   }
