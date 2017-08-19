@@ -36,7 +36,7 @@ class Confetti extends Component {
   componentDidMount() {
       let {duration, index} = this.props;
         Animated.timing(this._yAnimation, {
-           duration: duration,
+           duration: duration + this.randomIntValue(duration * .2, duration * -.2),
            toValue: windowHeight + 1.25,
            useNativeDriver: true
         }).start(this.props.onComplete);
