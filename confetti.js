@@ -99,7 +99,9 @@ Confetti.defaultProps = {
       "rgb(122.4, 198.9, 163.2)",
       "rgb(76.5, 193.8, 216.7)",
       "rgb(147.9, 99.4, 140.2)"
-    ]
+    ],
+    size: 1,
+    bsize: 1
 }
 
 const styles = StyleSheet.create({
