@@ -16,6 +16,12 @@ class ConfettiView extends Component {
       this.shouldStop = false;
   }
 
+  componentDidMount() {
+    if (this.props.startOnLoad) {
+      this.startConfetti();
+    }
+  }
+
   startConfetti() {
        let {confettis} = this.state;
        let {confettiCount, timeout} = this.props;
