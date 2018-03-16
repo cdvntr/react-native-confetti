@@ -61,7 +61,7 @@ class ConfettiView extends Component {
        let {...otherProps} = this.props
        return <View style={styles.container}>
          {confettis.map(confetti => {
-             return <Confetti key={confetti.key} index={confetti.key} onComplete={this.removeConfetti.bind(this, confetti.key)} colors={this.props.colors} {...otherProps}/>
+             return <Confetti key={confetti.key} index={confetti.key} onAnimationComplete={this.removeConfetti.bind(this, confetti.key)} colors={this.props.colors} {...otherProps}/>
          })}
        </View>
   }
