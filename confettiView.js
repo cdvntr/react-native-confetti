@@ -22,7 +22,7 @@ class ConfettiView extends Component {
     }
   }
 
-  startConfetti() {
+  startConfetti(onComplete) {
        let {confettis} = this.state;
        let {confettiCount, timeout} = this.props;
        this.shouldStop = false;
@@ -33,6 +33,7 @@ class ConfettiView extends Component {
            } else {
              confettis.push({key: this.confettiIndex});
              this.confettiIndex++;
+             onComplete && this.setState({onComplete});
              this.setState({confettis});
              this.startConfetti();
            }
@@ -41,13 +42,16 @@ class ConfettiView extends Component {
   }
 
   removeConfetti(key) {
-       let {confettis} = this.state;
+       let {confettis, onComplete} = this.state;
        let {confettiCount} = this.props;
        let index = confettis.findIndex(confetti => {return confetti.key === key});
        confettis.splice(index, 1);
        this.setState({confettis});
        if(key === confettiCount - 1) {
          this.confettiIndex = 0;
+       }
+       if(confettis.length === 0 && onComplete && typeof onComplete === 'function') {
+         onComplete();        
        }
   }
 
