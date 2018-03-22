@@ -58,6 +58,12 @@ class ConfettiView extends Component {
   stopConfetti ()
   {
     this.shouldStop = true;
+    this.confettiIndex = 0;
+    const { onComplete } = this.state;
+    if(onComplete && typeof onComplete === 'function') {
+      onComplete();        
+    }
+    this.setState({ confettis: [], onComplete: null });
   }
 
   render() {
