@@ -24,9 +24,9 @@ class ConfettiView extends Component {
 
   startConfetti() {
        let {confettis} = this.state;
-       let {confettiCount, timeout} = this.props;
+       let {confettiCount, timeout, untilStopped} = this.props;
        this.shouldStop = false;
-       if(this.confettiIndex < confettiCount) {
+       if(untilStopped || this.confettiIndex < confettiCount) {
          setTimeout(() => {
            if (this.shouldStop) {
              return;
@@ -69,7 +69,8 @@ class ConfettiView extends Component {
 
 ConfettiView.defaultProps = {
    confettiCount: 100,
-   timeout: 30
+   timeout: 30,
+   untilStopped: false
 }
 
 const styles = StyleSheet.create({
