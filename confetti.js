@@ -17,9 +17,6 @@ class Confetti extends Component {
       this._yAnimation = new Animated.Value(0);
       this.color = this.randomColor(this.props.colors);
       this.left = this.randomValue(0, windowWidth);
-  }
-
-  componentWillMount() {
       let rotationOutput = this.randomValue(-220, 220) + 'deg';
       this._rotateAnimation = this._yAnimation.interpolate({
         inputRange: [0, windowHeight / 2, windowHeight],
