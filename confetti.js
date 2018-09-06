@@ -17,9 +17,6 @@ class Confetti extends Component {
       this._yAnimation = new Animated.Value(0);
       this.color = this.randomColor(this.props.colors);
       this.left = this.randomValue(0, windowWidth);
-  }
-
-  componentWillMount() {
       let rotationOutput = this.randomValue(-220, 220) + 'deg';
       this._rotateAnimation = this._yAnimation.interpolate({
         inputRange: [0, windowHeight / 2, windowHeight],
@@ -53,22 +50,22 @@ class Confetti extends Component {
   }
 
   getConfettiStyle() {
-      let {index} = this.props;
+      let {index, size, bsize} = this.props;
       let bigConfetti = {
-        height: 5.5,
-        width: 11,
-        borderBottomLeftRadius: 5,
-        borderBottomRightRadius: 5,
-        borderTopLeftRadius: 2.6,
-        borderTopRightRadius: 2.6
+        height: 5.5*size,
+        width: 11*size,
+        borderBottomLeftRadius: 5*bsize,
+        borderBottomRightRadius: 5*bsize,
+        borderTopLeftRadius: 2.6*bsize,
+        borderTopRightRadius: 2.6*bsize
       };
       let smallConfetti = {
-        height: 4.5,
-        width: 8,
-        borderBottomLeftRadius: 2.5,
-        borderBottomRightRadius: 2.5,
-        borderTopLeftRadius: 1.3,
-        borderTopRightRadius: 1.3
+        height: 4.5*size,
+        width: 8*size,
+        borderBottomLeftRadius: 2.5*bsize,
+        borderBottomRightRadius: 2.5*bsize,
+        borderTopLeftRadius: 1.3*bsize,
+        borderTopRightRadius: 1.3*bsize
       }
       return index % 5 === 0 ? smallConfetti : bigConfetti;
   }
@@ -99,7 +96,9 @@ Confetti.defaultProps = {
       "rgb(122.4, 198.9, 163.2)",
       "rgb(76.5, 193.8, 216.7)",
       "rgb(147.9, 99.4, 140.2)"
-    ]
+    ],
+    size: 1,
+    bsize: 1
 }
 
 const styles = StyleSheet.create({
