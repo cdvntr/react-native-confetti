@@ -36,7 +36,7 @@ class Confetti extends Component {
            duration: duration + this.randomIntValue(duration * .2, duration * -.2),
            toValue: windowHeight + 1.25,
            useNativeDriver: true
-        }).start(this.props.onComplete);
+        }).start(this.props.onAnimationComplete);
   }
 
   getTransformStyle() {

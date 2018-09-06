@@ -1,6 +1,6 @@
 {
   "name": "react-native-confetti",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Raining confetti made with react native animations",
   "main": "confettiView.js",
   "repository": {
