@@ -22,6 +22,10 @@ class ConfettiView extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.stopConfetti();
+  }
+
   startConfetti(onComplete) {
        let {confettis} = this.state;
        let {confettiCount, timeout, untilStopped} = this.props;
@@ -55,8 +59,7 @@ class ConfettiView extends Component {
        }
   }
 
-  stopConfetti ()
-  {
+  stopConfetti() {
     this.shouldStop = true;
     this.confettiIndex = 0;
     const { onComplete } = this.state;
