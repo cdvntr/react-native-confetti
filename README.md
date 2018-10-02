@@ -30,14 +30,6 @@ class RNConfetti extends Component {
     }
   }
 
-  componentWillUnmount ()
-  {
-      if (this._confettiView)
-      {
-          this._confettiView.stopConfetti();
-      }
-  }
-
   render() {
     return <View style={styles.container}>
       <Confetti ref={(node) => this._confettiView = node}/>
